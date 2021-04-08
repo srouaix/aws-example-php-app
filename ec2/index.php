@@ -26,25 +26,7 @@ include 'function.php';
 
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">devopssec</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Accueil</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Articles <span class="sr-only">(current)</span></a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-
-  <main role="main" class="container">
+   <main role="main" class="container">
 
     <h1 class="mt-5">Films (machine <?= gethostname() ?>)</h1>
 
@@ -86,7 +68,7 @@ include 'function.php';
 
   <footer class="page-footer font-small bg-dark mt-5">
     <div class="footer-copyright text-center py-3 text-white">© Copyright:
-      <a href="#"> Mon App</a>
+      <a href="#"> My movies</a>
     </div>
   </footer>
 </body>
