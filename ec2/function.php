@@ -21,12 +21,14 @@ function getMovies()
         $movies = $dynamodb->scan(array(
         'TableName' => $tableName 
         ));      
-
+        $list_movies = array();
         foreach ($movies['Items'] as $movie)  {
-            $movie['title'] = $marshaler->unmarshalValue($movie['title']);
-            $movie['year'] = $marshaler->unmarshalValue($movie['year']);
+            $movie_item = array();
+            $movie_item['title'] = $marshaler->unmarshalValue($movie['title']);
+            $movie_item['year'] = $marshaler->unmarshalValue($movie['year']);
+            $list_movies[] = $movie_item;
         }
-        return $movie;
+        return $list_movies;
       } catch (DynamoDbException $e) {
       echo "Unable to query:\n";
       echo $e->getMessage() . "\n";
