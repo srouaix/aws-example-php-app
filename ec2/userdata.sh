@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
-export AWS_SECRET_ACCESS_ID=TOCHANGE
+export AWS_ACCESS_KEY_ID=TOCHANGE
 export AWS_SECRET_ACCESS_KEY=TOCHANGE
 export AWS_DEFAULT_REGION=TOCHANGE
 sudo yum update -y
@@ -23,7 +23,7 @@ sudo -E aws s3 cp s3://cpe-bucket-test/validation.php validation.php
 sudo mkdir .aws
 cd .aws
 sudo -E aws s3 cp s3://cpe-bucket-test/credentials credentials
-sudo sed -i 's/##AWS_ACCESS_KEY_ID##/'$AWS_SECRET_ACCESS_ID'/' /var/www/html/.aws/credentials
+sudo sed -i 's/##AWS_ACCESS_KEY_ID##/'$AWS_ACCESS_KEY_ID'/' /var/www/html/.aws/credentials
 sudo sed -i 's/##AWS_SECRET_ACCESS_KEY_ID##/'$(printf '%s\n' "$AWS_SECRET_ACCESS_KEY" | sed -e 's/[\/&]/\\&/g')'/' /var/www/html/.aws/credentials
 cd ..
 sudo chmod 777 .aws/*
