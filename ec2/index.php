@@ -68,7 +68,6 @@ include 'function.php';
     <hr>
     <h2 class="mt-5 mb-5">Liste de films</h2>
     <?php
-      $marshaler = new Marshaler();
       $articles = getArticles();
       foreach ($articles['Items'] as $article) {
             ?>
