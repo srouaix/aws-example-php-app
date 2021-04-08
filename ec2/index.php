@@ -68,15 +68,15 @@ include 'function.php';
     <hr>
     <h2 class="mt-5 mb-5">Liste de films</h2>
     <?php
-      $articles = getArticles();
-      foreach ($articles['Items'] as $article) {
+      $movies = getMovies();
+      foreach ($movies['Items'] as $movie) {
             ?>
         <div class="card mt-5">
           <div class="card-header">
-            <h2 class="h3"><?= $article['title'] ?> <small class="text-muted font-italic"></h2>
+            <h2 class="h3"><?= $movie['title'] ?> <small class="text-muted font-italic"></h2>
           </div>
           <div class="card-body">
-            <p class="card-text"><?= $article['year'] ?></p>
+            <p class="card-text"><?= $movie['year'] ?></p>
           </div>
         </div>
       <?php
