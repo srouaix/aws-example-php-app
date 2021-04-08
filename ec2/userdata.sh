@@ -1,8 +1,8 @@
 #!/bin/bash -xe
 exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
-export AWS_SECRET_ACCESS_ID=
-export AWS_SECRET_ACCESS_KEY=
-export AWS_DEFAULT_REGION=
+export AWS_SECRET_ACCESS_ID=TOCHANGE
+export AWS_SECRET_ACCESS_KEY=TOCHANGE
+export AWS_DEFAULT_REGION=TOCHANGE
 sudo yum update -y
 sudo amazon-linux-extras install -y php7.2
 sudo yum install -y httpd php-mbstring
