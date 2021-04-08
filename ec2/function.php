@@ -22,11 +22,11 @@ function getMovies()
         'TableName' => $tableName 
         ));      
 
-        foreach ($movies['Items'] as $article)  {
-            $movies['title'] = $marshaler->unmarshalValue($movies['title']);
-            $movies['year'] = $marshaler->unmarshalValue($movies['year']);
+        foreach ($movies['Items'] as $movie)  {
+            $movie['title'] = $marshaler->unmarshalValue($movie['title']);
+            $movie['year'] = $marshaler->unmarshalValue($movie['year']);
         }
-        return $movies;
+        return $movie;
       } catch (DynamoDbException $e) {
       echo "Unable to query:\n";
       echo $e->getMessage() . "\n";
