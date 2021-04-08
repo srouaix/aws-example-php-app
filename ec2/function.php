@@ -10,10 +10,11 @@ $sdk = new Aws\Sdk([
 ]);
 
 $dynamodb = $sdk->createDynamoDb();
+$marshaler = new Marshaler();
 
 function getMovies()
 {
-    global $sdk, $dynamodb;
+    global $sdk, $dynamodb, $marshaler;
 		
 	$tableName = 'Movies';
       try {    
@@ -33,7 +34,7 @@ function getMovies()
 }
 
 function validate(){
-    global $sdk, $dynamodb;
+    global $sdk, $dynamodb, $marshaler;
 
 	$tableName = 'Movies';
     if(!isset($_POST["title"]) || empty($_POST["title"])) {
