@@ -24,7 +24,7 @@ sudo mkdir .aws
 cd .aws
 sudo -E aws s3 cp s3://cpe-bucket-test/credentials credentials
 sudo sed -i 's/##AWS_ACCESS_KEY_ID##/'$AWS_SECRET_ACCESS_ID'/' /var/www/html/.aws/credentials
-sudo sed -i 's/##AWS_SECRET_ACCESS_KEY_ID##/'$AWS_SECRET_ACCESS_KEY'/' /var/www/html/.aws/credentials
+sudo sed -i 's/##AWS_SECRET_ACCESS_KEY_ID##/'$(printf '%s\n' "$AWS_SECRET_ACCESS_KEY" | sed -e 's/[\/&]/\\&/g')'/' /var/www/html/.aws/credentials
 cd ..
 sudo chmod 777 .aws/*
 php creationtable.php
