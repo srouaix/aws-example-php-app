@@ -5,7 +5,7 @@ use Aws\DynamoDb\Marshaler;
 
 $sdk = new Aws\Sdk([
     'profile'   => 'default',
-    'region'   => 'us-east-1',
+    'region'   => 'eu-west-1',
     'version'  => 'latest'
 ]);
 
